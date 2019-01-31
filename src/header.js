@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { IndexLinkContainer } from "react-router-bootstrap";
 
 export default function Header() {
   return (
@@ -13,6 +14,9 @@ export default function Header() {
         <Navbar.Brand href="#home">Navbar</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="#home">Home</Nav.Link>
+          <IndexLinkContainer to="/page1">
+            <Nav.Link>Another Page</Nav.Link>
+          </IndexLinkContainer>
           <Nav.Link href="#features">Features</Nav.Link>
           <Nav.Link href="#pricing">Pricing</Nav.Link>
           <NavDropdown title="Dropdown" id="basic-nav-dropdown">
@@ -22,9 +26,12 @@ export default function Header() {
             </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
-            </NavDropdown.Item>
+            <IndexLinkContainer to="/login">
+              <NavDropdown.Item>Login</NavDropdown.Item>
+            </IndexLinkContainer>
+            <IndexLinkContainer to="/logout">
+              <NavDropdown.Item>Logout</NavDropdown.Item>
+            </IndexLinkContainer>
           </NavDropdown>
         </Nav>
         <Nav>
